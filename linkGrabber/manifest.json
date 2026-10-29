@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Link Grabber - Drag & Copy",
+  "version": "1.0.0",
+  "description": "Ctrl + 마우스 드래그로 화면 영역 내의 링크(URL)를 추출하여 클립보드에 복사합니다.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Link Grabber 설정",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
